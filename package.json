@@ -1,0 +1,24 @@
+{
+  "devDependencies": {
+    "@types/handlebars-helpers": "^0.5.3",
+    "@types/jquery": "^3.5.14"
+  },
+  "type": "module",
+  "name": "mynba",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OrGeisler/MyNBA.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OrGeisler/MyNBA/issues"
+  },
+  "homepage": "https://github.com/OrGeisler/MyNBA#readme",
+  "description": ""
+}

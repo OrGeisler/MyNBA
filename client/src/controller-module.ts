@@ -1,5 +1,19 @@
-$('.btn-default').on('click', function () {
-    console.log('hello')
-})
+let dataModule = new DataModule()
+let renderer: Renderer = new Renderer()
 
-// console.log('hello')
+
+// $('.btn-default').on('click',function () {
+//     const year = $('#year').val()
+//     console.log(year)
+// })
+
+async function controller() {
+    // const year = $('#year').val()
+    // const team = $('#team').val()
+    const year = '2020'
+    const team = 'lakers'
+    await dataModule.playersGeneratoer(year,team)
+    renderer.playersRender(dataModule)
+}
+
+controller()
