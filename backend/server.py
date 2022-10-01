@@ -3,6 +3,7 @@ import uvicorn
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from routers.players_router.players import playersRoute
+from routers.dream_team_router.deam_team import dreamTeamRoute
 
 
 
@@ -10,6 +11,7 @@ app = FastAPI()
 
 app.mount("/client/build", StaticFiles(directory="./client/build"), name="build")
 app.include_router(playersRoute)
+app.include_router(dreamTeamRoute)
 
 
 @app.get('/sanity')

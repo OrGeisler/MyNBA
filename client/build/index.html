@@ -30,9 +30,10 @@
             <input class="form-check-input" type="checkbox"> Bday today 
           </label>
         </div>
-        <button type="submit" class="btn btn-primary" >Show Team</button>
+        <button type="button" class="btn btn-primary show-team mr-2" >Show Team</button>
+        <button type="button" class="btn btn-dark btn-sm show-dream-team" >Get Your Team</button>
     </div>
-      <div class="row m-3"></div>
+      <div class="players-container row m-3"></div>
     </div>
     <script src="client/build/jsfiles/player.js"></script>
     <script src="client/build/jsfiles/data-module.js"></script>
@@ -48,12 +49,31 @@
 <script id="players-template" type="text/x-handlebars-template">
     {{#each players}}
     <div class="col-sm-4 mb-3" >
-      <div class="card text-center h-100 " >
+      <div class="card text-center h-100 " data-id={{id}} >
         <div class="card-header" style="background-color: #3498db">{{firstName}} {{lastName}} </div>
         <div class="card-header">{{jersey}} </div>
           <img class = "card-body img-fluid rounded " src= {{picture}} alt="" onerror="this.onerror=null; this.src='https://image.shutterstock.com/image-vector/silhouette-missing-person-stamp-600w-752963539.jpg'">
-        <div class="card-footer">{{position}}</div>
+        <div class="card-footer">
+          <div class="mb-2">{{position}}</div>
+          <button type="button" class="btn btn-info dream-team-add">Add to DreamTeam</button>
+        </div>
       </div>
     </div>
     {{/each}}
+</script>
+
+<script id="dreamteam-template" type="text/x-handlebars-template">
+  {{#each players}}
+  <div class="col-sm-4 mb-3" >
+    <div class="card text-center h-100 " data-id={{id}} >
+      <div class="card-header" style="background-color: #3498db">{{firstName}} {{lastName}} </div>
+      <div class="card-header">{{jersey}} </div>
+        <img class = "card-body img-fluid rounded " src= {{picture}} alt="" onerror="this.onerror=null; this.src='https://image.shutterstock.com/image-vector/silhouette-missing-person-stamp-600w-752963539.jpg'">
+      <div class="card-footer">
+        <div class="mb-2">{{position}}</div>
+        <button type="button" class="btn btn-warning dream-team-remove">Remove from DreamTeam</button>
+      </div>
+    </div>
+  </div>
+  {{/each}}
 </script>

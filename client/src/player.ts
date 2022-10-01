@@ -1,13 +1,13 @@
 class Player {
-    
+    id:string
     firstName: string;
     lastName: string;
     picture: string;
     position: string;
     jersey: string;
-    // active: boolean
 
     constructor(
+        id:string,
         firstName: string,
         lastName: string,
         picture: string,
@@ -16,6 +16,7 @@ class Player {
       )
 
       {
+        this.id=id,
         this.firstName = firstName;
         this.lastName = lastName;
         this.picture = picture;
