@@ -17,6 +17,11 @@ $('.players-container').on('click','.dream-team-add',function(){
 
 })
 
+$('.players-container').on('mouseenter' ,'.show-stats',function(){
+    const playerId = $(this).closest('.card').data().id
+    $(this).popover({title: "Stats:", content: playerId ,html:true}); 
+  });
+
 $('.players-container').on('click','.dream-team-remove',async function(){
     const playerId = $(this).closest('.card').data().id
     console.log(playerId)
@@ -24,7 +29,6 @@ $('.players-container').on('click','.dream-team-remove',async function(){
     await dataModule.getDreamTeam()
     renderer.dreamTeamRender(dataModule.dreamTeamList)
 })
-
 
 $('.show-dream-team').on('click',async function(){
     await dataModule.getDreamTeam()

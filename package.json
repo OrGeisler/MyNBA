@@ -20,5 +20,12 @@
     "url": "https://github.com/OrGeisler/MyNBA/issues"
   },
   "homepage": "https://github.com/OrGeisler/MyNBA#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "@types/bootstrap": "^5.2.4",
+    "bootstrap": "^5.2.1",
+    "jquery": "^3.6.1",
+    "popover": "^2.4.1"
+  }
 }
