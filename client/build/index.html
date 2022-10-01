@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>API Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body style="background-color: #9BC4CB">
+  <div class="container" >
+    <div class="form-inline" >
+        <div class="form-group">
+          <label for="team" class="mr-2">Team: </label>
+          <input type="team" class="form-control mr-2" id="team" placeholder="Enter team name" >
+        </div>
+        <div class="form-group">
+          <label for="year" class="mr-2">Year:</label>
+          <input type="year" class="form-control mr-2" id="year" placeholder="Enter year">
+        </div>
+        <div class="form-check">
+          <label class="form-check-label mr-2">
+            <input class="form-check-input" type="checkbox"> Bday today 
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary" >Show Team</button>
+    </div>
+      <div class="row m-3"></div>
+    </div>
+    <script src="client/build/jsfiles/player.js"></script>
+    <script src="client/build/jsfiles/data-module.js"></script>
+    <script src="client/build/jsfiles/render-module.js"></script>
+    <script src="client/build/jsfiles/controller-module.js"></script>
+
+</body>
+</html>
+
+
+<!-- Handlebars -->
+
+<script id="players-template" type="text/x-handlebars-template">
+    {{#each players}}
+    <div class="col-sm-4 mb-3" >
+      <div class="card text-center h-100 " >
+        <div class="card-header" style="background-color: #3498db">{{firstName}} {{lastName}} </div>
+        <div class="card-header">{{jersey}} </div>
+          <img class = "card-body img-fluid rounded " src= {{picture}} alt="" onerror="this.onerror=null; this.src='https://image.shutterstock.com/image-vector/silhouette-missing-person-stamp-600w-752963539.jpg'">
+        <div class="card-footer">{{position}}</div>
+      </div>
+    </div>
+    {{/each}}
+</script>

@@ -5,6 +5,7 @@ class Player {
     picture: string;
     position: string;
     jersey: string;
+    // active: boolean
 
     constructor(
         firstName: string,

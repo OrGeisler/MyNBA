@@ -2,18 +2,10 @@ let dataModule = new DataModule()
 let renderer: Renderer = new Renderer()
 
 
-// $('.btn-default').on('click',function () {
-//     const year = $('#year').val()
-//     console.log(year)
-// })
-
-async function controller() {
-    // const year = $('#year').val()
-    // const team = $('#team').val()
-    const year = '2020'
-    const team = 'lakers'
-    await dataModule.playersGeneratoer(year,team)
+$('.btn-primary').on('click',async function () {
+    const year:any= $('#year').val()
+    const teamName:any = $('#team').val()
+    const fillterBirthDay : boolean = $('.form-check-input').is(":checked")
+    await dataModule.playersGeneratoer(year,teamName,fillterBirthDay)
     renderer.playersRender(dataModule)
-}
-
-controller()
+})

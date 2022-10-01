@@ -6,8 +6,31 @@ class DataModule {
         this.playersList = [] as Player[]
     }
 
-    async playersGeneratoer(year:string,team:string) {
-        const response = await $.get(`/${team}/${year}`) 
+
+    fillterUniqePlayers(){
+        const uniuqeNames:string[] = []
+
+        this.playersList = this.playersList.filter(player =>{
+            const isDuplicate = uniuqeNames.includes(`${player.firstName}${player.lastName}`)
+
+            if(!isDuplicate){
+                uniuqeNames.push(`${player.firstName}${player.lastName}`)
+
+                return true
+            }
+
+            return false
+        })
+    }
+
+    async playersGeneratoer(year:string,teamName:string ,fillterBirthDay:boolean) {
+        let response
+        if (!fillterBirthDay) {
+            response = await $.get(`/getAllPlayers?teamName=${teamName}&year=${year}`) 
+        }
+        else{
+            response = await $.get(`/getBirthDayPlayers?teamName=${teamName}&year=${year}`)
+        }
         this.playersList = response.map((value:any) => {
             let player : Player = new Player(
                 value.firstName,
@@ -17,11 +40,7 @@ class DataModule {
                 value.jersey
             )
             return player
-        })}
+        })
+        this.fillterUniqePlayers()
     }
-
-
-// const test1 : DataModule = new DataModule()
-// test1.playersGeneratoer().then(() =>{
-//     console.log(test1.playersList)
-// })
+}
