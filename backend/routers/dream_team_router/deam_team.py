@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter,status
 import requests
 from . import dream_team_utils
 from fastapi import Request, Response
@@ -9,13 +9,11 @@ dreamTeamRoute = APIRouter()
 def root():
     return dream_team_utils.dream_team
 
-@dreamTeamRoute.post('/dreamTeam/add')
+@dreamTeamRoute.post('/dreamTeam/add' , status_code=status.HTTP_201_CREATED)
 async def root(request: Request):
     req = await request.json()
     dream_team_utils.addPlayerToDreamTeam(req)
-    print(dream_team_utils.dream_team)
 
-@dreamTeamRoute.delete('/getDreamTeam/remove/{id}')
+@dreamTeamRoute.delete('/getDreamTeam/remove/{id}' , status_code=status.HTTP_204_NO_CONTENT)
 def root(id):
     dream_team_utils.removePlayerFromDreamTream(id)
-    print(dream_team_utils.dream_team)

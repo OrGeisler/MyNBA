@@ -26,3 +26,8 @@ def fillterByTeamNBday(players_data,teamName):
         , players_data[i]))
         players_list.extend(players)
     return players_list
+
+def fillterStats(stats):
+    stats_list = ['points_per_game',"games_played",'minutes_per_game','three_point_made_per_game','blocks_per_game']
+    filltered_stats = { value: stats[value] for value in stats_list }
+    return filltered_stats

@@ -24,3 +24,4 @@ class Player {
         this.jersey = jersey;
       }
     }
+

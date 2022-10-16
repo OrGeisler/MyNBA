@@ -16,8 +16,7 @@ def addPlayerToDreamTeam(player):
                 player['lastName'],player['picture'],player['position'])
     if new_player not in dream_team:
         dream_team.append(new_player)
-    print(dream_team)
-
+        
 def removePlayerFromDreamTream(id):
     player_to_delete = [player for player in dream_team if player.id == id][0]
     dream_team.remove(player_to_delete)

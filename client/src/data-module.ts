@@ -26,7 +26,6 @@ class DataModule {
 
     findPlayerById(id:string){
         const player = this.playersList.find(player => player.id == id)
-        console.log(player)
         return player
     }
 
@@ -80,5 +79,10 @@ class DataModule {
         )
     
     }
-        
+ 
+    async  getStats(id:string) {
+        const player = this.findPlayerById(id)
+        const response = await $.get(`/getPlayerStats?firstName=${player?.firstName}&lastName=${player?.lastName}`)
+        return response
+    }
 }
