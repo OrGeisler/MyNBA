@@ -7,9 +7,12 @@ playersRoute = APIRouter()
 
 @playersRoute.get('/getAllPlayers')
 def root(teamName,year):
-    players_data= requests.get(f'http://data.nba.net/10s/prod/v1/{year}/players.json').json()['league']
-    players_list = players_utils.fillterByteam(players_data,teamName)
-    return players_list
+    try:
+        players_data= requests.get(f'http://data.nba.net/10s/prod/v1/{year}/players.json').json()['league']
+        players_list = players_utils.fillterByteam(players_data,teamName)
+        return players_list
+    except:
+        raise HTTPException(status_code=404, detail="Team stats does not exist")
 
 @playersRoute.get('/getBirthDayPlayers')
 def root(teamName,year):

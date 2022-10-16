@@ -13,7 +13,7 @@
     <link rel=“shortcut icon” href=“#”/>
     <title>Document</title>
 </head>
-<body style="background-color: #9BC4CB">
+<body style="background-color: #FFD151">
   <div class="container" >
     <div class="form-inline" >
       <div class="row">
@@ -48,8 +48,8 @@
           </label>
         </div>
       </div>
-        <button type="button" class="btn btn-primary show-team mt-1" >Show Team</button>
-        <button type="button" class="btn btn-dark show-dream-team mt-1" >Get Your Team</button>
+        <button type="button" style="background-color: #D3B88C" class="btn fw-bold show-team mt-1" >Show Team</button>
+        <button type="button" style="background-color: #D3B88C" class="btn fw-bold show-dream-team mt-1" >Get Your Dream Team</button>
     </div>
       <div class="players-container row m-3"></div>
     </div>
@@ -68,13 +68,13 @@
     {{#each players}}
     <div class="col-sm-4 mb-3" >
       <div class="card text-center h-100 " data-id={{id}} >
-        <div class="card-header" style="background-color: #3498db">{{firstName}} {{lastName}} </div>
-        <div class="card-header">{{jersey}} </div>
-          <img class = "card-body img-fluid rounded " src= {{picture}} alt="" onerror="this.onerror=null; this.src='https://image.shutterstock.com/image-vector/silhouette-missing-person-stamp-600w-752963539.jpg'">
-        <div class="card-footer">
-          <div class="mb-2">{{position}}</div>
-          <button type="button" class="btn btn-info show-stats mb-2">Show Stats</button>
-          <button type="button" class="btn btn-info dream-team-add mb-2">Add to DreamTeam</button>
+        <div class="card-header" style="background-color: #EDB230">{{firstName}} {{lastName}} </div>
+        <div class="card-header" style="background-color: #F8C537" >{{jersey}} </div>
+          <img class = "card-body img-fluid rounded "  style="background-color: #FCDFA6" src= {{picture}} alt="" onerror="this.onerror=null; this.src='https://image.shutterstock.com/image-vector/silhouette-missing-person-stamp-600w-752963539.jpg'">
+        <div class="card-footer" style="background-color: #EDB230">
+          <div class="mb-2" style="background-color: #F8C537">{{position}}</div>
+          <button type="button" style="background-color: #E77728" class="btn fw-bold show-stats mb-2">Show Stats</button>
+          <button type="button" style="background-color: #E77728" class="btn fw-bold dream-team-add mb-2">Add to DreamTeam</button>
         </div>
       </div>
     </div>
@@ -85,12 +85,13 @@
   {{#each players}}
   <div class="col-sm-4 mb-3" >
     <div class="card text-center h-100 " data-id={{id}} >
-      <div class="card-header" style="background-color: #3498db">{{firstName}} {{lastName}} </div>
-      <div class="card-header">{{jersey}} </div>
-        <img class = "card-body img-fluid rounded " src= {{picture}} alt="" onerror="this.onerror=null; this.src='https://image.shutterstock.com/image-vector/silhouette-missing-person-stamp-600w-752963539.jpg'">
-      <div class="card-footer">
-        <div class="mb-2">{{position}}</div>
-        <button type="button" class="btn btn-warning dream-team-remove">Remove from DreamTeam</button>
+      <div class="card-header" style="background-color: #EDB230">{{firstName}} {{lastName}} </div>
+      <div class="card-header" style="background-color: #F8C537" >{{jersey}}</div>
+        <img class = "card-body img-fluid rounded " style="background-color: #FCDFA6" src= {{picture}} alt="" onerror="this.onerror=null; this.src='https://image.shutterstock.com/image-vector/silhouette-missing-person-stamp-600w-752963539.jpg'">
+      <div class="card-footer" style="background-color: #EDB230">
+        <div class="mb-2" style="background-color: #F8C537">{{position}}</div>
+        <button type="button" style="background-color: #E77728" class="btn fw-bold show-stats mb-2">Show Stats</button>
+        <button type="button" style="background-color: #E77728" class="btn fw-bold dream-team-remove mb-2">Remove from DreamTeam</button>
       </div>
     </div>
   </div>
