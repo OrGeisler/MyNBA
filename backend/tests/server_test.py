@@ -1,4 +1,3 @@
-
 import requests
 
 def test_get_all_players():
